@@ -7,7 +7,8 @@
 - **Trilha:** nuvem (rota A, agente com ferramentas)
 - **Ambiente:** Windows 11 Home · Python 3.13.16 via uv 0.13.0 · Node (opcional,
   usado para rodar a suíte no terminal) · sem modelo local
-- **Tempo total da sessão:**
+- **Tempo total da sessão:** cerca de 1h40min (das 14:36, quando a pasta da
+  atividade foi criada, às 16:17, horário do commit do fluxo básico)
 
 ## Problemas de ambiente antes de começar
 
@@ -188,8 +189,3 @@ para que a emissão seguinte pule para o próximo número.
 
 **chamarProxima:** primeiro verifica se o tamanho da lista de espera é igual a 0.
 Se for, a função não altera o estado e mantém a senha atual no painel.
-
-**reiniciarFila** _(pendente)_
-
-- _Por que a função não pede confirmação?_
-- _Por que ela precisa alterar o mesmo objeto, e não criar um novo?_
