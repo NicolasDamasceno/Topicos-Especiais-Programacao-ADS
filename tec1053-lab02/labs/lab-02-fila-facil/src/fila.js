@@ -11,18 +11,26 @@
   }
 
   function emitirSenha(estado) {
-    // TODO: RF-02. Atualize o estado recebido e retorne o número emitido.
-    throw new Error("LAB02_PENDENTE: emitirSenha");
+    // RF-02: a senha entra no fim da espera; atual e totalChamadas não mudam.
+    const senha = estado.proximaSenha;
+    estado.aguardando.push(senha);
+    estado.proximaSenha += 1;
+    return senha;
   }
 
   function chamarProxima(estado) {
-    // TODO: RF-03 e RF-04. A fila vazia não deve apagar a senha atual.
-    throw new Error("LAB02_PENDENTE: chamarProxima");
+    // RF-04: fila vazia retorna null sem alterar nada, preservando a senha atual.
+    if (estado.aguardando.length === 0) return null;
+    // RF-03: FIFO — sai a primeira que chegou; só chamadas efetivas contam.
+    const senha = estado.aguardando.shift();
+    estado.atual = senha;
+    estado.totalChamadas += 1;
+    return senha;
   }
 
   function reiniciarFila(estado) {
-    // TODO: RF-05. Restaure os campos do mesmo objeto.
-    throw new Error("LAB02_PENDENTE: reiniciarFila");
+    // RF-05: restaura os valores iniciais no mesmo objeto; a confirmação é da interface.
+    Object.assign(estado, criarEstado());
   }
 
   globalThis.FilaFacil = Object.freeze({
